@@ -1,3 +1,13 @@
+import bonus
+
+def getTitle():
+	print("say title:")
+	return bonus.getAudio()
+
+def getDiscription():
+	print("say discription: ")
+	return bonus.getAudio()
+
 def create_youtube_video(title, description):
 	hashtags = []
 	for i in range(5):
@@ -29,7 +39,9 @@ def similarity_to_video(vid1, vid2):
 	return str((counter / 5) * 100) + '%'  
 
 def main():
-	youtube_video = create_youtube_video("hello", "hi")
+	title = getTitle()
+	discription = getDiscription()
+	youtube_video = create_youtube_video(title, discription)
 	for i in range(456):
 		youtube_video = like(youtube_video)
 	print(youtube_video)
